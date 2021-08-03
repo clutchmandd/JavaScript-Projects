@@ -45,3 +45,8 @@ function My_First_Function() {                                   //Defining a fu
     var result = str.fontcolor("green");                         //Using the fontcolor method on the string variable
     document.getElementById("Green_Text") .innerHTML = result;   //Putting the value of result into HTML element with "Green_Text" id
 }
+
+function Display_Date() {
+    var date = "Today is the day after yesterday!"
+    document.getElementById("Todays_Date") .innerHTML = date;
+}
