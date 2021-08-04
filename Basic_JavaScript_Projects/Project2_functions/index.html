@@ -12,8 +12,19 @@
         </button>
 
         <p id="Concatenate"></p>
-
         <p id = "Concatenate" onclick="myFunction()">Click Here!</p>
+
+        <script> 
+            // Function to change the color of element
+            function MyName() {                                         //Defining a function and naming it
+                var name = document.getElementById("MyName");           //Defining a variable and giving it a value
+                name.style.color = "green";                             //Assigning the variable's font color
+            } 
+        </script> 
+        <h1 id = "MyName">My name is David</h1>
+        <!--Click on the button to change the color-->
+        <input type = "button" onclick = "MyName()"               
+            value = "Click here to change color" />
 
     </body>
 </html>
