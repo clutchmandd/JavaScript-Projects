@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--Enable smooth scrolling for the whole page-->
+<html lang="en" style="scroll-behavior: smooth;">
+    <head>
+        <title>Final Challenges</title>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./JS/main.js" defer></script>
+        <link rel="stylesheet" href="./CSS/main.css">
+
+        <!--jQuery for slideshow-->
+        <script>
+            $("#slideshow > div:gt(0)").hide();
+
+            setInterval(function() { 
+            $('#slideshow > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow');
+            }, 3000);
+        </script>
+
+        <!--Fade-In with CSS-->
+        <style>
+            body {
+                animation: fadeInAnimation ease-in-out 5s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+            /* @Keyframes Rule for fade-in animation*/
+            @keyframes fadeInAnimation {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        </style>
+
+    </head>
+    <body>       
+        
+        <!--HTML Links to various sections of the page-->
+        <a href="#phonenumber">Enter Phone Number</a><br>
+        <a href="#img">Porsche 911 GT3</a><br>
+        <a href="#slideshow">Slideshow</a>
+
+        <!--Utilizing the vw font-size-->
+        <header>
+            <h1 style="font-size: 8vw;">Final Challenges in JavaScript Class</h1>
+            <!--Horizontal Rule tag-->
+            <hr>
+            <p style="font-size: 3vw;">Almost to the final exam!</p>
+        </header>
+
+        <!--Slideshow-->
+        <div id="slideshow">
+            <div>
+                <img src="./Images/image_2.jpeg" style="width: 240px;height: 240;">
+            </div>
+            <div>
+                <img src="./Images/image_3.jpeg" style="width: 240px;height: 240;">
+            </div>
+            <div>
+                <img src="./Images/image_4.jpeg" style="width: 240px;height: 240;">
+            </div>
+        </div>
+
+        <!--Form with phone number-->
+        <form name="phoneForm" onsubmit="return validateForm()" method="POST">
+            <label for="phonenumber">Phone number:</label><br>
+            <input type="text" id="phonenumber" name="phonenumber" placeholder="Phone number..."><br>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <br>
+
+        <!--Popup Contact Form-->
+        <button class="open-button" id="contactform" onclick="openForm()">Contact Form</button>
+
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+              <h1>Login</h1>
+          
+              <label for="fname"><b>First Name</b></label>
+              <input type="text" placeholder="Enter First Name" name="fname" required>
+          
+              <label for="lname"><b>Last Name</b></label>
+              <input type="text" placeholder="Enter Last Name" name="lname" required>
+
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email Address" name="email" required>
+          
+              <button type="submit" class="btn">Submit</button>
+              <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <!--Image to zoom in and out with CSS-->
+
+        <img id="img" src="./Images/image_1.jpeg" alt="911 GT3">
+
+    </body>
+</html>

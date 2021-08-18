@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JSON.Stringify() Assignment</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <p id="myCar"></p>
+        <p id="myCar_object" ondblclick="myFunction()"></p>
+        <p id="myName"></p>
+
+        <script>
+            /*JavaScript dictionary object*/
+            var car = {year: "1962", make: "VW", model: "Beetle", color: "Gulf Orange"};
+            /*Convert JavaScript objects to string format*/
+            var JSONstring = JSON.stringify(car);
+            document.getElementById("myCar").innerHTML = JSONstring;
+            
+            /*This is a JSON string variable*/
+            var myCar = '{"year": "1962", "make": "VW", "model": "Beetle", "color": "Gulf Orange"}';
+            /*Convert JSON string to JavaScript object*/
+            var JSONstring_parse = JSON.parse(myCar);
+            document.getElementById("myCar_object").innerHTML = "My car is a " + JSONstring_parse.year + 
+                " " + JSONstring_parse.make + " " + JSONstring_parse.model + " in " +
+                JSONstring_parse.color + ".";
+            
+            /*set data as a key/value pair to be saved locally in the browswer*/
+            localStorage.setItem("Name", "David");
+            /*then use the key "Name" to return its value "David"*/
+            document.getElementById("myName").innerHTML = localStorage.getItem("Name");
+
+            /*ondblclick event*/
+            function myFunction() {
+                document.getElementById("myCar_object").style.color = "rgb(255,100,0)";
+            }
+        </script>
+        
+    </body>
+</html>
